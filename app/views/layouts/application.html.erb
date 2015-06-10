@@ -7,30 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header class="navbar navbar-fixed navbar-default">
-  <div class="container">
-    <%= link_to "Cocktails","",class:"btn btn-lg ", id: "logo" %>
-    <div class="nav_item">
-      <%= link_to "link 1","",class: "btn btn-default btn-warning shadow" %>
-    </div>
-    <div class="nav_item">
-      <%= link_to "link 3","",class: "btn btn-default btn-warning shadow" %>
-    </div>
-    <div class="nav_item">
-      <%= link_to "link 4","",class: "btn btn-default btn-warning shadow" %>
-    </div>
-    <div class="nav_item">
-      <%= link_to "link 5","",class: "btn btn-default btn-warning shadow" %>
-    </div>
-  </div>
-  
-</header>
+
+<%= render 'layouts/navigation' %>
 <div class="container">
 <%= yield %>
-
-<div class="footer">
-  <p>&copy Cocktails party 2015</p>
-</div>
+<%= render 'layouts/footer' %>
 </div>
 </body>
 </html>
