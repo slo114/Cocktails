@@ -2,18 +2,44 @@ $navbar-default-bg: #f9d62e;
 $light-orange: #ff8c00;
 $navbar-default-color: $light-orange;
 $btn-default-color: #ff4e50;
-
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Ramabhadra);
 
+body{
+  background: url("ozadjeCeleStrani.png") no-repeat;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+.well{
+    background: rgba(209,209,209,0.5);
+    border-radius: 3px;
+    border: 0px;
+}
 
 
+
+.navbar {
+    background: rgba(255,140,0,0.5);
+    border: 0px;
+    border-radius: 0px;
+}
 
 #logo{
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: 100px;
     float: left;
     margin-right: 10px;
     color: #fff;
@@ -40,7 +66,7 @@ $btn-default-color: #ff4e50;
 
 .center {
     text-align: center;
-    margin-top: -20px;
+    margin-top: -10px;
 }
 
 h1,h2,h3,h4 {
@@ -76,5 +102,72 @@ h2 {
     margin-top: 25px;
     border-top: 1px solid #eaeaea;
     color: #777;
+}
+
+/* remove spacing between middle columns */
+.row.no-gutter [class*='col-']:not(:first-child):not(:last-child) {
+  padding-right:5px;
+  padding-left:5px;
+}
+/* remove right padding from first column */
+.row.no-gutter [class*='col-']:first-child {
+  padding-right:5px;
+}
+/* remove left padding from first column */
+.row.no-gutter [class*='col-']:last-child {
+  padding-left:5px;
+}
+
+
+/* only for column content visible */
+.col-lg-1>div {background-color:#ddd;}
+/* nav styling */
+nav a {
+	
+	display: inline-block;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	font-size: 1.6em;
+}
+
+
+/* Effect 5: same word slide in */
+.cl-effect-5 a {
+	overflow: hidden;
+	padding: 0 4px;
+	margin-top: 20px;
+	margin-right: 40px;
+	margin-left: 70px;
+}
+
+.cl-effect-5 a span {
+	position: relative;
+	display: inline-block;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.cl-effect-5 a span::before {
+	position: absolute;
+	top: 100%;
+	content: attr(data-hover);
+	font-weight: 700;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.cl-effect-5 a:hover span,
+.cl-effect-5 a:focus span {
+    color: gold;
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	transform: translateY(-100%);
 }
 
