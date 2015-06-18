@@ -1,9 +1,10 @@
 class Barman < ActiveRecord::Base
-    def up
-        drop_tabel :barmans
-    end
-    
-    def down
-    raise ActiveRecord::IrreversibleMigration
-    end
+    has_many :recipes
+    before_save { self.email = email.downcase }
+    validates :barmanname, presence: true, length: { minimum: 3, maximum: 40}
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    validates :email, presence: true, length: { maximum: 105 },
+                                      uniqueness: { case_sensitive: false },
+                                      format: { with: VALID_EMAIL_REGEX }
+                                      
 end
